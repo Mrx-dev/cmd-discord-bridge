@@ -7,7 +7,6 @@ export let event: EventsType = {
     execute: (message: Message): void => {
         let logObject: LogType = {
             username: message.author.username,
-            avatar: message.author.displayAvatarURL(),
             message: message.content,
             timestamps: message.author.createdTimestamp
         }
