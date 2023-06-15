@@ -13,6 +13,7 @@ rl.on("line", (input: string) => {
     MessagesArray.forEach((msg: string) => {
         console.log(msg);
     });
+    if (input.length <= 0) return;
     webhook.send(input);
 });
 
