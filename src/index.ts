@@ -5,9 +5,14 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 import { eventHandler } from './handlers/eventHandler';
 import { rl } from './lib/InputLisener';
 import * as webhook from './lib/WebhookSender';
+export var MessagesArray: any = [];
 eventHandler(client);
 
 rl.on("line", (input: string) => {
+    process.stdout.write('\x1Bc');
+    MessagesArray.forEach((msg: string) => {
+        console.log(msg);
+    });
     webhook.send(input);
 });
 
